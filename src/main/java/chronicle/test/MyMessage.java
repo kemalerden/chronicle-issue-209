@@ -148,23 +148,10 @@ public class MyMessage implements BytesMarshallable {
             this.version, this.timestamp, this.payload);
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see com.hsbc.cibm.dml.hs.kcr.domain.DslMessage#getOutput()
-     */
-
     public String getOutput() {
         return MessageFormat.format("controlEventId=[{0}],chronicleIndex=[{1}]\n{2}\n", this.controlEventId,
             String.valueOf(this.chronicleIndex), this.payload);
     }
-
-
-    /*
-     * (non-Javadoc)
-     *
-     * @see com.hsbc.cibm.dml.hs.kcr.domain.DslMessage#length()
-     */
 
     public int length() {
         this.payloadAsByteArr = this.payload.getBytes(StandardCharsets.UTF_8);
